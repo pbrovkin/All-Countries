@@ -54,7 +54,7 @@ input[type=submit]:hover {
     display: flex;
     justify-content: center;
     color: red;
-    margin-right: 11rem;
+    /* margin-right: 11rem; */
 
 }
 
