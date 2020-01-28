@@ -77,7 +77,7 @@ function startsWithVal(par, val) {
             filtered = countries.filter(country => country.languages[0].toLowerCase().startsWith(val.toLowerCase()));
             break;
         case 'population':
-            filtered = countries.filter(country => country.population <= Number(val));
+            filtered = countries.filter(country => country.population >= Number(val));
             break;
     }
     return filtered;
@@ -102,11 +102,6 @@ function includesVal(par, val) {
     return filtered;
 }
 
-
-/* function itemsToLowerCase(item) {
-    return item.toLowerCase();
-} */
-
 //function to show searching results below the input field
 function searchResults(arr) {
     if (arr.length === 1) {
@@ -124,14 +119,14 @@ function checkInputVal(val) {
         if (patt.test(val)) {
             return true;
         } else {
-            document.getElementById('error').innerHTML = 'ERROR: Enter valid value';
+            document.getElementById('error').innerHTML = 'Please input alphabets only';
         }
     } else {
-        let patt = /([1-9][0-9]*)|0/;
+        let patt = /^[\d\s]*$/;
         if (patt.test(val)) {
             return true;
         } else {
-            document.getElementById('error').innerHTML = 'ERROR: Enter valid value';
+            document.getElementById('error').innerHTML = 'Please input numbers only';
         }
     }
 }

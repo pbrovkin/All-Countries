@@ -2,32 +2,32 @@ html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
     background: rgb(232, 232, 232);
 }
 
-.input-container {
+.select-container {
     display: flex;
     justify-content: center;
+    /* margin-right: 7rem; */
 }
 
-.input-container>div {
+.select-container > div {
     margin: 10px;
 }
 
 .search-container {
     display: flex;
     justify-content: center;
+    margin-left: 7.5rem;
 }
 
-.search-container>div {
+.search-container > div {
     margin: 0.5rem;
 }
 
 input[type=text] {
-    padding: 3px 58px;
+    width: 345px;
+    padding: 3px 18px;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -54,14 +54,15 @@ input[type=submit]:hover {
     display: flex;
     justify-content: center;
     color: red;
-    margin-right: 5rem;
+    margin-right: 11rem;
+
 }
 
 .search-results {
     display: flex;
     justify-content: center;
     color: green;
-    margin-right: 5rem;
+    /* margin-right: 5rem; */
 }
 
 .countries-container {
