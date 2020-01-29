@@ -8,18 +8,20 @@ body {
     background: rgb(232, 232, 232);
 }
 
-.input-container {
+.select-container {
     display: flex;
     justify-content: center;
+    margin-right: 5rem;
 }
 
-.input-container>div {
-    margin: 10px;
+.select-container>div {
+    margin: 0.5rem;
 }
 
 .search-container {
     display: flex;
     justify-content: center;
+    margin-left: 2.4rem;
 }
 
 .search-container>div {
@@ -27,7 +29,8 @@ body {
 }
 
 input[type=text] {
-    padding: 3px 58px;
+    width: 345px;
+    padding: 3px 36px;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -54,14 +57,14 @@ input[type=submit]:hover {
     display: flex;
     justify-content: center;
     color: red;
-    margin-right: 5rem;
+    margin-right: 4rem;
 }
 
 .search-results {
     display: flex;
     justify-content: center;
     color: green;
-    margin-right: 5rem;
+    margin-right: 4rem;
 }
 
 .countries-container {
@@ -69,7 +72,7 @@ input[type=submit]:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-left: 5rem;
+    margin-left: 6rem;
 }
 
 .country-block {
