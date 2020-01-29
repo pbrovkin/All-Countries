@@ -1,16 +1,16 @@
-let container = document.querySelector('.countries-container');
-
+//function to generate countries by default
 generateCountries(countries);
 
-
+//oninput event if the value of the <input> element is changed
 document.querySelector('input').oninput = function () {
     document.getElementById('error').textContent = '';
     main();
 }
 
+//onclick event to reverse displayed countries 
 document.getElementById('reverse').onclick = function () {
     let displayedCountries = document.getElementsByClassName('country-block').length;
-    container.textContent = '';
+    document.querySelector('.countries-container').textContent = '';
     if (displayedCountries === countries.length) {
         generateCountries(countries.reverse());
     } else {
@@ -18,18 +18,21 @@ document.getElementById('reverse').onclick = function () {
     }
 }
 
-
+//main function occurs when the input element gets user input
 function main() {
-    container.textContent = '';
 
+    //to empty container before generating search results
+    document.querySelector('.countries-container').textContent = '';
+
+    //reading all the input values
     let inputVal = document.getElementById('input').value;
-
     let searchBy = document.getElementById('search-values').value;
-
     let searchParam = document.getElementById('search-params').value;
 
+    //check input value is valid
     checkInputVal(inputVal);
 
+    //condition that calling generate function based on parameters from input fields
     if (searchParam === 'start-letters') {
         generateCountries(startsWithVal(searchBy, inputVal));
     } else if (searchParam === 'includ-letters') {
@@ -38,7 +41,7 @@ function main() {
 }
 
 
-
+//function to generate country blocks getting data from an array of objects
 function generateCountries(arr) {
     arr.forEach((country) => {
         let block = document.createElement('div');
@@ -53,11 +56,15 @@ function generateCountries(arr) {
         </div>`;
         document.querySelector('.countries-container').append(block);
     });
-    searchResults(arr);
+    //show searching results
+    showSearchResults(arr);
 }
 
+//supporting array to reverse filtered objects 
 let filtered = [];
 
+
+//conditions to filter out the array based on starting letters
 function startsWithVal(par, val) {
     switch (par) {
         case 'name':
@@ -76,7 +83,7 @@ function startsWithVal(par, val) {
     return filtered;
 }
 
-
+//conditions to filter out the array based on including letters
 function includesVal(par, val) {
     switch (par) {
         case 'name':
@@ -95,12 +102,8 @@ function includesVal(par, val) {
     return filtered;
 }
 
-function itemsToLowerCase(item) {
-    return item.toLowerCase();
-}
-
-
-function searchResults(arr) {
+//function to show searching results below the input field
+function showSearchResults(arr) {
     if (arr.length === 1) {
         document.getElementById('results').innerHTML = `${arr.length} country found`;
     } else {
@@ -108,6 +111,7 @@ function searchResults(arr) {
     }
 }
 
+//function to check the input value is correct, shows error message if not valid 
 function checkInputVal(val) {
     let searchBy = document.getElementById('search-values').value;
     if (searchBy !== 'population') {
@@ -115,14 +119,14 @@ function checkInputVal(val) {
         if (patt.test(val)) {
             return true;
         } else {
-            document.getElementById('error').innerHTML = 'ERROR: Enter valid value';
+            document.getElementById('error').innerHTML = 'Please input alphabets only';
         }
     } else {
-        let patt = /([1-9][0-9]*)|0/;
+        let patt = /^[\d\s]*$/;
         if (patt.test(val)) {
             return true;
         } else {
-            document.getElementById('error').innerHTML = 'ERROR: Enter valid value';
+            document.getElementById('error').innerHTML = 'Please input numbers only';
         }
     }
 }
