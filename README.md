@@ -1,1 +1,1 @@
-# All Countries List with search by name, by capital, by language, by population
+# All Countries List. Searching by name, by capital, by language, by population.
