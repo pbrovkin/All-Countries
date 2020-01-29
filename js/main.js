@@ -21,7 +21,7 @@ document.getElementById('reverse').onclick = function () {
 //main function occurs when the input element gets user input
 function main() {
 
-    //empty container before generating search results
+    //to empty container before generating search results
     document.querySelector('.countries-container').textContent = '';
 
     //reading all the input values
@@ -57,7 +57,7 @@ function generateCountries(arr) {
         document.querySelector('.countries-container').append(block);
     });
     //show searching results
-    searchResults(arr);
+    showSearchResults(arr);
 }
 
 //supporting array to reverse filtered objects 
@@ -103,7 +103,7 @@ function includesVal(par, val) {
 }
 
 //function to show searching results below the input field
-function searchResults(arr) {
+function showSearchResults(arr) {
     if (arr.length === 1) {
         document.getElementById('results').innerHTML = `${arr.length} country found`;
     } else {
