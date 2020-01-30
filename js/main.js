@@ -77,7 +77,7 @@ function startsWithVal(par, val) {
             filtered = countries.filter(country => country.languages[0].toLowerCase().startsWith(val.toLowerCase()));
             break;
         case 'population':
-            filtered = countries.filter(country => country.population >= Number(val));
+            filtered = countries.filter(country => country.population >= val);
             break;
     }
     return filtered;
@@ -96,7 +96,7 @@ function includesVal(par, val) {
             filtered = countries.filter(country => country.languages.join().includes(val.toLowerCase()));
             break;
         case 'population':
-            filtered = countries.filter(country => country.population <= Number(val));
+            filtered = countries.filter(country => country.population <= val);
             break;
     }
     return filtered;

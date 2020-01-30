@@ -2,9 +2,6 @@ html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
     background: rgb(232, 232, 232);
 }
 
@@ -14,7 +11,7 @@ body {
     margin-right: 5rem;
 }
 
-.select-container>div {
+.select-container > div {
     margin: 0.5rem;
 }
 
@@ -24,18 +21,19 @@ body {
     margin-left: 2.4rem;
 }
 
-.search-container>div {
+.search-container > div {
     margin: 0.5rem;
 }
 
 input[type=text] {
     width: 345px;
-    padding: 3px 36px;
+    padding: 4px 36px;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
     font-size: larger;
+    outline: none;
 }
 
 input[type=submit] {
