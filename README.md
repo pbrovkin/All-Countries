@@ -1,1 +1,1 @@
-# All Countries List. Searching by name, by capital, by language, by population. Data from the array of objects.
+# All Countries List. Using the array of objects. Searching by name, by capital, by language, by population.
